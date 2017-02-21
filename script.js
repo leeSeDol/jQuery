@@ -76,7 +76,7 @@ alert(li_txt);
 var $para=$("p");
 var p_txt=$para.attr("title");
 alert(p_txt);
-*/
+
 var $li_1=$("<li title='香蕉'>香蕉</li>");
 var $li_2=$("<li title='雪梨'>雪梨</li>");
 $("ul").append($li_1);
@@ -91,6 +91,84 @@ var $li=$("ul li:eq(1)").remove();
 $("ul").append($li);
 //$("ul li").remove("li[title != '菠萝']");
 $("ul").empty();
+$("ul li").click(function(){
+    $(this).clone(true).appendTo("ul");
+    $(this).remove();
+});
+
+$("p").replaceWith("<strong>你最不喜欢的水果是？</strong>");
+$("ul").wrap("<div class='content'></div>");
+$("ul").wrapAll("<div class='content'></div>")
+$("ul li").wrapInner("<div class='content'></div>");
+
+var $para=$("p");
+$para.attr({
+    "title":"your title",
+    "name":"sss"
+});
+var p_txt=$para.attr("title");
+console.log(p_txt);
+$("p").removeAttr("name");
+$("p").addClass("para slider att");
+$("p").removeClass("att slider");
+$("p").toggleClass("content");
+if($("p").hasClass("content")){
+    alert('');
+}
+if($("p").is(".content")){
+    alert("content");
+}
+*/
+console.log($("p").html());
+console.log($("p").text());
+//this.defaultValue保存着
+$("#address,#password").focus(function(){
+    var txt_value=$(this).val();
+    if(txt_value==this.defaultValue){
+        $(this).val("");
+    }
+});
+$("#address,#password").blur(function(){
+    var txt_value=$(this).val();
+    if(txt_value==""){
+        $(this).val(this.defaultValue);
+    }
+});
+var $body=$("body").children();
+var $p=$("p").children();
+var $ul=$("ul").children();
+console.log($body.length);
+console.log($p.length);
+console.log($ul.length);
+for(var i=0;i<$ul.length;i++){
+    console.log($ul[i].innerHTML);
+}
+var $p1=$("p").next();
+console.log($p1.html());
+var $ul=$("ul").prev();
+console.log($ul.html());
+var $p2=$("p").siblings();
+console.log($p2.html());
+$(document).bind("click",function(e){
+    $(e.target).closest("li").css("color","red");
+});
+console.log($("p").css("color"));
+$("p").css({
+    "color":"pink"
+});
+$("#address").width(500);
+$("#address").height("18px");
+var offset=$("#address").offset();
+var left=offset.left;
+var top=offset.top;
+console.log(top);
+console.log(left);
+var position=$("#address").position();
+var p_left=position.left;
+var p_top=position.top;
+console.log(p_top);
+console.log(p_left);
+console.log(position);
 
 
 
