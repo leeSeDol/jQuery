@@ -118,7 +118,6 @@ if($("p").hasClass("content")){
 if($("p").is(".content")){
     alert("content");
 }
-*/
 console.log($("p").html());
 console.log($("p").text());
 //this.defaultValue保存着
@@ -170,6 +169,80 @@ console.log(p_top);
 console.log(p_left);
 console.log(position);
 
+var x=10,y=20;
+$("a.tooltip").mouseover(function(e){
+
+    this.myTitle=this.title;
+    this.title="";
+    var $tooltip="<div id='tooltip'>"+this.myTitle+"</div>";
+    $("body").append($tooltip);
+    $("#tooltip").css({
+        "top":e.pageY+x+"px",
+        "left":e.pageX+y+"px"
+    }).show("fast");
+}).mouseout(function(){
+    this.title=this.myTitle;
+    $("#tooltip").remove();
+}).mousemove(function(e){
+    $("#tooltip").css({
+        "top":e.pageY+x+"px",
+        "left":e.pageX+y+"px"
+    });
+});
+
+$("a.tooltip img").mouseover(function(e){
+    this.myTitle=this.title;
+    this.title="";
+    var $tooltip="<div id='tooltip'><img src="+this.src+" alt='产品预览图' /></div>";
+    $("body").append($tooltip);
+    $($tooltip).css({
+        "top":e.pageY+"px",
+        "left":e.pageX+"px"
+    }).show("fast");
+}).mouseout(function(){
+    this.title=this.myTitle;
+    $("#tooltip").remove();
+}).mousemove(function(e){
+    $("#tooltip").css({
+        "top":e.pageY+"px",
+        "left":e.pageX+"px"
+    });
+});
+
+$("div.panel .content").hide();
+$("div.panel h5.head").bind("click",function(){
+    if($("div.panel .content").is(":visible")){
+        $("div.panel .content").hide("slow");
+    }else{
+        $("div.panel .content").show("slow");
+    }
+});
+$("div.panel .content").hide();
+$("div.panel h5.head").bind("click",function(){
+    var $content=$(this).next("div.content");
+    if($content.is(":visible")){
+        $content.hide("fast");
+    }else{
+        $content.show("fast");
+    }
+});*/
+$("div.panel .content").hide();
+$("div.panel h5.head").bind("mouseover",function(){
+    var $content=$(this).next("div.content");
+    if($content.is(":visible")){
+        $content.hide("fast");
+    }else{
+        $content.show("fast");
+    }
+});
+$("div.panel h5.head").bind("mouseleave",function(){
+    var $content=$(this).next("div.content");
+    if($content.is(":visible")){
+        $content.hide("fast");
+    }else{
+        $content.show("fast");
+    }
+});
 
 
 
