@@ -225,7 +225,7 @@ $("div.panel h5.head").bind("click",function(){
     }else{
         $content.show("fast");
     }
-});*/
+});
 $("div.panel .content").hide();
 $("div.panel h5.head").bind("mouseover",function(){
     var $content=$(this).next("div.content");
@@ -244,6 +244,106 @@ $("div.panel h5.head").bind("mouseleave",function(){
     }
 });
 
+$("div.panel h5.head").toggle(function(){
+    $(this).addClass("highlight");
+    $(this).next().show("fast");
+},function(){
+    $(this).removeClass("highlight");
+    $(this).next().hide("fast");
+});
 
+//为span元素绑定click事件
+$("span").click(function(){
+   var txt = $("#msg").html()+"<p>内层span元素被点击</p>";
+   $("#msg").html(txt);
+   event.stopPropagation();
+});
+//为div元素绑定click事件
+$("div#content").click(function(){
+    var txt = $("#msg").html()+"<p>外层div元素被点击</p>";
+    $("#msg").html(txt);
+    event.stopPropagation();
+});
+$("body").click(function(){
+    var txt = $("#msg").html()+"<p>body被点击</p>";
+    $("#msg").html(txt);
+});
+$("#sub").bind("click",function(){
+    var username=$("#username").val();
+    if(username==""){
+        $("#msg").html("<p>文本框的值不能为空。</p>");
+        event.preventDefault();
+    }
+});
 
+$("a").click(function(){
+    alert(event.type);
+    return false;
+});
+$("a[href='#']").click(function(){
+    var tg=event.target;
+    alert(tg.href);
+    alert(event.pageX);
+    alert(event.pageY);
+    return false;
+});
+$("a").click(function(event){
+    console.log(event.which);
+});
+$("input").keyup(function(event){
+    console.log(event.which);
+});
+
+$("#btn").bind("click",myFun1=function(){
+    $("#test").append("<p>我绑定函数1</p>");
+}).bind("click",myFun2=function(){
+    $("#test").append("<p>我绑定函数2</p>");
+}).bind("click",myFun3=function(){
+    $("#test").append("<p>我绑定函数3</p>");
+});
+$("#delAll").click(function(){
+    $("#btn").unbind("click",myFun2).unbind("click",myFun1);
+    $("#btn").unbind("click");
+});
+$("#btn").one("click",function(){
+    $("#test").append("<p>我绑定函数1</p>");
+}).one("click",myFun2=function(){
+    $("#test").append("<p>我绑定函数2</p>");
+}).one("click",myFun3=function(){
+    $("#test").append("<p>我绑定函数3</p>");
+});
+$("#btn").trigger("click");
+
+$("#btn").bind("myClick",function(event,message1,message2){
+    alert("<p>"+message1+message2+"</p>");
 })
+$("#btn").trigger("myClick",["counter ","striker"]);
+$("div").bind("mouseover mouseout",function(){
+    $(this).toggleClass("over");
+});
+//等于上面的代码
+$("div").bind("mouseover",function(){
+    $(this).toggleClass("over");
+}).bind("mouseout",function(){
+    $(this).toggleClass("over");
+});
+$("div").bind("click",function(){
+    $("body").append("<p>click事件</p>");
+}).bind("click.plugin",function(){
+    $("body").append("<p>click.plugin事件</p>");
+});
+$("button").bind("click",function(){
+    $("div").trigger("click!");
+});*/
+$("div#body").hide();
+$("div#body").fadeIn();
+$("div#body").slideUp();
+$("div#body").slideDown();
+$("div#body").animate({
+    "width":"+=100",
+},500).animate({
+    "height":"+=100",
+},500);
+
+
+});
