@@ -343,7 +343,109 @@ $("div#body").animate({
     "width":"+=100",
 },500).animate({
     "height":"+=100",
-},500);
+},500,function(){
+    $(this).css({
+        "border":"1px solid #08b"
+    });
+});
+$("#body").hover(function(){
+    $(this).stop(true)
+        .delay(1000)
+        .animate({
+            width:"200"
+        }).animate({
+            height:"200"
+        });
+},function(){
+    $(this).stop(true)
+        .animate({
+            width:"100"
+        }).animate({
+            height:"100"
+        });
+});
+$("#head").click(function(){
+    $(this).next("div").slideToggle();
+}).toggle(function(){
+    $(this).fadeTo(500,0.2);
+},function(){
+    $(this).fadeTo(500,1);
+});
+$(":input").focus(function(){
+    $(this).addClass("focus");
+}).blur(function(){
+    $(this).removeClass("focus");
+});
+var $comment=$("#comment");
+$(".bigger").click(function(){
+    if(!$comment.is(":animated")){
+        if( $comment.height()<500 ){
+            //$comment.height( $comment.height() + 50 );
+            $comment.animate({
+                height:"+=50"
+            },400);
+        }
+    }
+    
+});
+$(".smaller").click(function(){
+    if(!$comment.is(":animated")){
+        if( $comment.height()>50 ){
+            //$comment.height( $comment.height() - 50 );
+            $comment.animate({
+                height:"-=50"
+            },400);
+        }
+    }
+});
+$(".up").click(function(){
+    if(!$comment.is(":animated")){
+        $comment.animate({
+            scrollTop:"-=50"
+        },400);
+    }
+});
+$(".down").click(function(){
+    if(!$comment.is(":animated")){
+        $comment.animate({
+            scrollTop:"+=50"
+        },400);
+    }
+});
+$("#checkAll").click(function(){
+    $("[name=items]:checkbox").attr('checked',true);
+});
+$("#checkNo").click(function(){
+    $("[name=items]:checkbox").attr('checked',false);
+});*/
+$("#checkAll").click(function(){
+        $('[name=items]:checkbox').attr("checked",this.checked);
+});
+$("#checkRev").click(function(){
+    $("[name=items]:checkbox").each(function(){
+        this.checked =! this.checked;
+    });
+});
+$("#send").click(function(){
+    var str="你选中的是：\r\n";
+    $('[name=items]:checkbox:checked').each(function(){
+        str += $(this).val()+"\r\n";
+    });
+    alert(str);
+});
+/*$('[name=items]:checkbox').click(function(){
+    var flag=true;
+    $('[name=items]:checkbox').each(function(){
+        if(!this.checked){
+            flag=false;
+        }
+    });
+    $("#checkAll").attr("checked",flag);
+});*/
+$('[name=items]:checkbox').click(function(){
+    var $tmp = $('[name=items]:checkbox');
+    $('#checkAll').attr("checked",$tmp.length==$tmp.filter(':checked').length);
+});
 
 
 });
