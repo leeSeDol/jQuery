@@ -334,7 +334,7 @@ $("div").bind("click",function(){
 });
 $("button").bind("click",function(){
     $("div").trigger("click!");
-});*/
+});
 $("div#body").hide();
 $("div#body").fadeIn();
 $("div#body").slideUp();
@@ -417,7 +417,7 @@ $("#checkAll").click(function(){
 });
 $("#checkNo").click(function(){
     $("[name=items]:checkbox").attr('checked',false);
-});*/
+});
 $("#checkAll").click(function(){
         $('[name=items]:checkbox').attr("checked",this.checked);
 });
@@ -433,7 +433,7 @@ $("#send").click(function(){
     });
     alert(str);
 });
-/*$('[name=items]:checkbox').click(function(){
+$('[name=items]:checkbox').click(function(){
     var flag=true;
     $('[name=items]:checkbox').each(function(){
         if(!this.checked){
@@ -441,11 +441,46 @@ $("#send").click(function(){
         }
     });
     $("#checkAll").attr("checked",flag);
-});*/
+});
 $('[name=items]:checkbox').click(function(){
     var $tmp = $('[name=items]:checkbox');
     $('#checkAll').attr("checked",$tmp.length==$tmp.filter(':checked').length);
 });
+$("#add").click(function(){
+    var $options = $("#select1 option:selected");
+    $options.appendTo("#select2");
+});
+$("#add_all").click(function(){
+    var $options = $("#select1 option");
+    $options.appendTo("#select2");
+});
+$("#remove").click(function(){
+    var $options = $("#select2 option:selected");
+    $options.appendTo("#select1");
+});
+$("#remove_all").click(function(){
+    var $options = $("#select2 option");
+    $options.appendTo("#select1");
+});*/
+$("form :input.required").each(function(){
+    var $required = $("<strong class='high'> *</strong>")
+    $(this).parent().append($required);//将它追加到文档中
+});
+$("form :input").blur(function(){
+    var $parent = $(this).parent();
+    $parent.find(".formtips").remove();
+    //验证用户名
+    if($(this).is("#username")){
+        if(this.value=="" || this.value.length<6){
+            var errorMsg = '请输入至少六位的用户名';
+            $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+        }else{
+            var okMsg='输入正确';
+            $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+        }
+    }
+    //验证邮箱
 
+});
 
 });
