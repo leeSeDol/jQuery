@@ -480,7 +480,27 @@ $("form :input").blur(function(){
         }
     }
     //验证邮箱
-
+    if($(this).is("#email")){
+        if(this.value=="" || (this.value!=""&&!/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value))){
+            var errorMsg='请输入正确的E-Mail地址';
+            $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+        }else{
+            var okMsg="输入正确";
+            $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+        }
+    }
+}).keyup(function(){
+    $(this).triggerHandler("blur");
+}).focus(function(){
+    $(this).triggerHandler("blur");
+});
+$("#send").click(function(){
+    $("form .required:input ").trigger('blur');
+    var numError = $('form .onError').length;
+    if(numError){
+        return false;
+    }
+    alert("恭喜您，注册成功");
 });
 
 });
