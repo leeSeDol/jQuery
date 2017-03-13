@@ -1,0 +1,181 @@
+/*重置*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content: ;}
+abbr,acronym{border:0;}
+body{color:#666; 
+    background-color:#fff;
+    font: 12px/1.5 '微软雅黑',tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix {zoom:1;} 
+/*.left div, .right div {
+    width: 500px;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    float: left;
+    border: 1px solid #ccc;
+}
+.left div {
+    background: #bbffaa;
+}
+.right div {
+    background: yellow;
+} 
+.SubCategoryBox{
+    position:absolute;
+}
+.SubCategoryBox ul{
+    padding-top:50px;
+    width:600px;
+    height:300px;
+    border:1px solid #ccc;
+}
+.SubCategoryBox ul li{
+    width:200px;
+    height:50px;
+    text-align:center;
+    float:left;
+    font-size:20px;
+}
+.showMore{
+    width:200px;
+    height:50px;
+    line-height:50px;
+    border:1px solid #ccc;
+    text-align:center;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    margin-left:-100px;
+}
+.prompted{
+    text-shadow:1px 1px 10px rgba(0,0,0,0.8);
+}
+.content{
+    border:1px solid #ccc;
+}
+#address,#password{
+    position:relative;
+    font-family:"微软雅黑";
+    color:pink;
+    top:100px;
+}
+.wrap{
+    height:300px;
+    position:absolute;
+    border:1px solid #ccc;
+}
+#tooltip{
+    color:#fff;
+    border:1px solid #ccc;
+    position:absolute;
+    background-color: #000;
+}
+.saiChe li{
+    width:100px;
+    float:left;
+    margin-right:20px;
+    border:1px solid #ccc;
+}
+.saiChe li a{
+    display:inline-block;
+    width:100px;
+}
+.saiChe li a img{
+    width:100px;
+    height:60px;
+}
+div.panel{
+    border:1px solid #ccc;
+    width:200px;
+}
+div.panel h5.head{
+    border-bottom:1px solid #ccc;
+}
+div.panel .content{
+    
+}
+.highlight{
+    background: #f30;
+}
+.v_show{
+    width:600px;
+    height:200px;
+    border:1px solid #ccc;
+    overflow:hidden;
+}
+.v_caption{
+    height:100%;
+    height:30px;
+    position:relative;
+}
+.cartoon{
+    line-height:30px;
+}
+.highlight_tip{
+    position:absolute;
+    left:80px;
+    top:6px;
+}
+.change_btn{
+    position:absolute;
+    left:150px;
+    top:6px;
+}
+.change_btn>span{
+    border:1px solid #ccc;
+}
+.v_caption em{
+    position:absolute;
+    top:6px;
+    right:20px;
+}
+.v_content{
+    width:800px;
+}
+.v_content .v_content_list ul{
+    width:800px;
+}
+.v_content .v_content_list ul li{
+    width:140px;
+    height:170px;
+    display:block;
+    float:left;
+    margin:0 5px 0 5px;
+    
+}
+.v_content .v_content_list ul li img{
+    width:150px;
+    height:120px;
+    border:1px solid #ccc;
+}
+input:focus,textarea:focus{
+    border:1px solid #f00;
+    background-color: #fcc;
+}
+.focus{
+    border:1px solid #f00;
+    background-color: #fcc;
+}*/
+th{
+    padding-right:40px;
+}
+table{
+    border:1px solid #ccc;
+}
+.even{
+    background-color: #fff38f;
+}
+.odd{
+    background-color: #ffe;
+}
+.selected{
+    background-color: #000;
+    color:#fff;
+}
