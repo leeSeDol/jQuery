@@ -461,7 +461,7 @@ $("#remove").click(function(){
 $("#remove_all").click(function(){
     var $options = $("#select2 option");
     $options.appendTo("#select1");
-});*/
+});
 $("form :input.required").each(function(){
     var $required = $("<strong class='high'> *</strong>")
     $(this).parent().append($required);//将它追加到文档中
@@ -502,5 +502,31 @@ $("#send").click(function(){
     }
     alert("恭喜您，注册成功");
 });
+$("tbody>tr:odd").addClass("odd");
+$("tbody>tr:even").addClass("even");
+$("tr:contains('王五')").addClass("selected");
+$("tr:contains('王五')").find(':radio').attr('checked',true);
+$("table :radio:checked").parent().parent().addClass("selected");
+$("tbody>tr").click(function(){
+    $(this).addClass("selected")
+    .siblings().removeClass('selected')
+    .end()
+    .find(':radio').attr('checked',true)
+    .parent().parent().siblings().find(':radio').attr('checked',false);
+});*/
+$("tr:contains('王五')").find(':checkbox').attr('checked',true);
+$("tbody>tr").click(function(){
+    if($(this).hasClass('selected')){
+        $(this).removeClass("selected")
+        .find(":checkbox").attr("checked",false);
+    }else{
+        $(this).addClass("selected")
+        .find(':checkbox').attr('checked',true)
+    }
+
+});
+
+
+
 
 });
