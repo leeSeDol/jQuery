@@ -523,7 +523,54 @@ $("tbody>tr").click(function(){
         $(this).addClass("selected")
         .find(':checkbox').attr('checked',true)
     }
-
+});
+    $("tr.parent").click(function(){
+    $(this).toggleClass("selected")
+        .siblings(".child_"+this.id)
+        .fadeToggle();
+}).click();
+$("tr:contains('王五')").addClass("selected");
+$("table tbody tr").hide()
+    .filter("tr:contains('李')").show();
+$("#filterName").keyup(function(){
+    $("table tbody tr").hide()
+        .filter(":contains("+$(this).val()+")").show();
+}).keyup;
+$("span").click(function(){
+    var thisEle=$("#para").css("font-size");
+    var textFontSize = parseFloat(thisEle,10);
+    var unit=thisEle.slice(-2);
+    console.log(unit);
+    var cName=$(this).attr("class");
+    if(cName=="bigger"){
+        textFontSize+=2;
+    }else if(cName=="smaller"){
+        textFontSize-=1;
+    }
+    $("#para").css("font-size",textFontSize+unit);
+});
+var $div_li = $("div.tab_menu ul li");
+$div_li.click(function(){
+    $(this).addClass("selected")
+        .siblings().removeClass("selected");
+    var index=$div_li.index($(this));
+    console.log(index);
+    $("div.tab_box > div").eq(index).show()
+                            .siblings().hide();
+}).eq(0).click();
+$div_li.hover(function(){
+    $(this).addClass("hover");
+},function(){
+    $(this).removeClass("hover");
+}).bind("active",function(){
+    $(this).removeClass("hover");
+});*/
+$("#skin li").each(function(){
+    $(this).click(function(){
+        $that=$(this);
+        $("body").css("background-color",$that.attr("title"));
+    });
+    $(this).css("background-color","#fff");
 });
 
 
