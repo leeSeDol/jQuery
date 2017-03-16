@@ -513,7 +513,7 @@ $("tbody>tr").click(function(){
     .end()
     .find(':radio').attr('checked',true)
     .parent().parent().siblings().find(':radio').attr('checked',false);
-});*/
+});
 $("tr:contains('王五')").find(':checkbox').attr('checked',true);
 $("tbody>tr").click(function(){
     if($(this).hasClass('selected')){
