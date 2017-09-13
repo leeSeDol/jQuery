@@ -9,7 +9,6 @@
 	margin:0;
 	padding:0;
 }
-
 </style>
 </head>
 <body>
@@ -19,25 +18,35 @@
 <script>
 $(function(){
 	$("#showHtmlBtn").click(function(){
-		$("#wrap").load('a.html');
+		$("#wrap").load('a.html');				//将a.html直接插入到id为wrap的div中
 	});
 
 	$("#useJSONdoc").click(function(){
-		$.getJSON('b.json',function(data){
+
+		$.getJSON('b.json',function(data){			//获取b.json,data为其映射,利用data对其进行操作
 			$("#wrap").empty();
-			$.each(data,function( entryIndex , entry ){
+
+			$.each(data,function( entryIndex , entry ){		//$.each第一个参数为数组或映射，第二个参数为回调函数，参数为该数组的索引和值
+
 				var html = "<div class='entry'>" + (entryIndex +1);
 				html += "<h3 class='term'>" + entry['term'] + "</h3>";
 				html += "<div class='part'>"+ entry['part'] +"</div>";
 				html += "<div class='difinition'>"+ entry['difinition'] + "</div>" ;
 
-				if(  ){
+				if( entry['quote'] ){
+					html += '<div class="quote">';
+
+					$.each( entry['quote'] , function(lineIndex,line){
+						html += '<div class="quote-line">' + line + '</div>';
+					});
+
+					if(entry['author']){
+						html += '<div class="quote-author">'+ entry['author'] +'</div>';
+					}
 
 				}
-
 				html += "</div>";
 				$("#wrap").append(html);
-
 			});
 		});
 	});
