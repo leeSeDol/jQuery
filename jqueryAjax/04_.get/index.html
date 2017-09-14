@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<div id="wrap"></div>
+	<button id="xmlBtn">click me to load xml</button>
+<script>
+$(function(){
+	$("#xmlBtn").click(function(){
+		$.get('entries.xml' , function(data){
+
+			$("#wrap").empty();
+
+			$(data).find('entry').each(function(){
+
+				var $entry = $(this);
+
+				var html = '<div class="entry">';
+
+				html += '<h3 class="term">'+ $entry.attr('term') +'</h3>';
+				html += '<div class="part">'+ $entry.attr('part') +'</div>';
+				html += '<div class="definition">' + $entry.find('definition').text();
+
+				var $quoto = $entry.find('quoto');
+				if($quoto.length){
+					html+='<div class="quoto">';
+
+					$quoto.find('line').each(function(){
+						html+='<div class="quoto-line">'+ $(this).text() +'</div>';
+					});
+					if( $quoto.attr('author') ){
+						html+='<div class="author">'+ $quoto.attr('author') +'</div>';
+					}
+
+					html+='</div>';
+				}
+				html += '</div>';
+				html += '</div>';
+
+				$("#wrap").append(html);
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>
