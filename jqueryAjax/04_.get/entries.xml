@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entries>
+
+	<entry term="DANCE" part="vi">
+		<definition>
+			tTTTTTTTTTTTTTJHKNDSLKDMJKLSDMKLMSDKLSDM
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+		</definition>
+	</entry>
+
+	<entry term="DAY" part="n.">
+		<definition>
+			tTTTTTTTTTTTTTJHKNDSLKDMJKLSDMKLMSDKLSDM
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+		</definition>
+	</entry>
+
+	<entry term="DEBT" part="n.">
+		<definition>
+			tTTTTTTTTTTTTTJHKNDSLKDMJKLSDMKLMSDKLSDM
+			NDSLKDMJKLSDMKLMSDKNDSLKDMJKLSDMKLMSDK
+		</definition>
+		<quoto author="Barow S. Vode">
+			<line>TTTTTTTTTTTTTTTTTTT</line>
+			<line>RRRRRRRRRRRRRRRRRRR</line>
+			<line>AAAAAAAAAAAAAAAAAAA</line>
+			<line>FFFFFFFFFFFFFFFFFFF</line>
+			<line>VVVVVVVVVVVVVVVVVVV</line>
+			<line>BBBBBBBBBBBBBBBBBBB</line>
+			<line>DDDDDDDDDDDDDDDDDDD</line>
+			<line>CCCCCCCCCCCCCCCCCCC</line>
+		</quoto>
+	</entry>
+
+	<entry term="DEFAME" part="v.t.">
+		<definition>
+			To lie aaaaaaaaaaaaaaaaaaaadd.
+		</definition>
+	</entry>
+</entries>
