@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<button id="postBtn">发送一个 HTTP POST 请求页面并获取返回内容</button>
+<script type="text/javascript">
+$(function(){
+	$("#postBtn").click(function(){
+		$.post( "http://www.runoob.com/try/ajax/demo_test_post.php" , {
+			name:"菜鸟教程",
+			url:"http:www.runoob.com"
+		} ,function(data,status){
+			alert("数据：\n"+data+"\n状态: "+status);
+		});
+	});
+})
+</script>
+</body>
+</html>
