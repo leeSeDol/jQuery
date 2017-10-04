@@ -25,6 +25,35 @@
 	</fieldset>
 </form>
 
-
+<script>
+$(document).ready(function(){
+	$("#demoForm").validate({
+		rules:{
+			username:{
+				required:true,
+				minlength:2,
+				maxlength:10
+			},
+			password:{
+				required:true,
+				minlength:2,
+				maxlength:16
+			}
+		},
+		messages:{
+			username:{
+				required:"必须填写用户名",
+				minlength:"用户名最小长度为2",
+				maxlength:"用户名最大长度为10"
+			},
+			password:{
+				required:"必须填写密码",
+				minlength:"用户名最小长度为2",
+				maxlength:"用户名最大长度为16"
+			}
+		}
+	});
+});
+</script>
 </body>
 </html>
