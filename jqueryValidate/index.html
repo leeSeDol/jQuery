@@ -13,11 +13,11 @@
 		<legend>用户登录</legend>
 		<p>
 			<label for="username">用户名</label>
-			<input type="text" id="username" name="username">
+			<input type="text" id="username" name="username" class="txt">
 		</p>
 		<p>
 			<label for="password">密码</label>
-			<input type="password" id="password" name="password">
+			<input type="password" id="password" name="password" class="txt">
 		</p>
 		<p>
 			<label for="confirm-password">确认密码</label>
@@ -37,7 +37,7 @@
 var validator;
 $(document).ready(function(){
 	validator = $("#demoForm").validate({
-		debug:true,
+		//debug:true,
 		rules:{
 			username:{
 				required:true
@@ -102,7 +102,17 @@ $(document).ready(function(){
 		password:"密码也错了"
 	});
 	*/
-	
+
+	$.validator.setDefaults({
+		debug:true
+	});
+	//用类设置默认规则
+	$.validator.addClassRules({
+		txt:{
+			required:true,
+			minlength:5
+		}
+	});
 });
 
 </script>
